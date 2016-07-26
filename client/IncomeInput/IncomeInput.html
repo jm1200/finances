@@ -1,0 +1,69 @@
+<template name="IncomeInput">
+    <div class="row">
+        <div class="col-md-6">
+            {{> quickForm collection="MyUsers" id="incomeInput" type="update-pushArray" doc=exampleDoc scope="incomes"}}
+        </div>
+        {{#with incomeDisplayObject}}
+        <div class="col-md-6">
+            <table class="table table-bordered table-striped">
+                <tbody>
+                    <tr>
+                        <td>John's Pay</td>
+                        <td>{{formatDollars incomeDisplayObject.johnPay}}</td>
+                    </tr>
+                    <tr>
+                        <td>John's Deductions</td>
+                        <td>{{formatDollars incomeDisplayObject.johnDed}}</td>
+                    </tr>
+                    <tr>
+                        <td>Meg's Pay</td>
+                        <td>{{formatDollars incomeDisplayObject.megPay}}</td>
+                    </tr>
+                    <tr>
+                        <td>Meg's Deductions</td>
+                        <td>{{ formatDollars incomeDisplayObject.megDed}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total income minus deductions</td>
+                        <td>{{formatDollars incomeDisplayObject.totalIncomeMinusDed}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total Expenses</td>
+                        <td>{{formatDollars incomeDisplayObject.totalExpenses}}</td>
+                    </tr>
+                    <tr>
+                        <td>John's Income Percentage</td>
+                        <td>{{formatPercent incomeDisplayObject.jPercent}}</td>
+                    </tr>
+                    <tr>
+                        <td>John's Income Percentage</td>
+                        <td>{{formatPercent incomeDisplayObject.mPercent}}</td>
+                    </tr>
+                    <tr>
+                        <td>John Owes House</td>
+                        <td>{{formatDollars incomeDisplayObject.johnOwesHouse}}</td>
+                    </tr>
+                    <tr>
+                        <td>Meg Owes House</td>
+                        <td>{{formatDollars incomeDisplayObject.megOwesHouse}}</td>
+                    </tr>
+                    <tr>
+                        <td>John Keeps</td>
+                        <td>{{formatDollars incomeDisplayObject.johnKeeps}}</td>
+                    </tr>
+                    <tr>
+                        <td>Meg Keeps</td>
+                        <td>{{formatDollars incomeDisplayObject.megKeeps}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {{/with}}
+    </div>
+
+
+    <br />
+    <h4>Table</h4>
+    <table id="incomeTable" class="table table-striped table-bordered table-condensed" width="100%"></table>
+
+</template>
